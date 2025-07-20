@@ -1,12 +1,12 @@
-# Dockerfile
-
 FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY main.py .
+COPY requirements.txt .
 
-RUN pip install fastapi uvicorn
+RUN pip install -r requirements.txt
+
+COPY . .
 
 EXPOSE 8080
 
