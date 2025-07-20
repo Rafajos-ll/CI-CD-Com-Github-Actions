@@ -24,6 +24,13 @@ jobs:
       - name: Push da imagem
         run: docker push ${{ secrets.DOCKER_USERNAME }}/hello-app:${{ github.sha }}
 
+      - name: Preparar acesso SSH ao repositório de manifests
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
       - name: Atualizar manifests via PR
         run: |
           git config --global user.email "Rafasch22@hotmail.com"
