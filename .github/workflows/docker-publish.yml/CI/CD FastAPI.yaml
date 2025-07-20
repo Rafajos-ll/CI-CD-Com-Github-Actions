@@ -26,9 +26,9 @@ jobs:
 
       - name: Atualizar manifests via PR
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "CI Bot"
-          git clone git@github.com:SEU_USUARIO/hello-manifests.git
+          git config --global user.email "Rafasch22@hotmail.com"
+          git config --global user.name "RAFAJOS-LL"
+          git clone git@github.com:Rafajos-ll/hello-manifests.git
           cd hello-manifests
           sed -i 's|image:.*|image: '${{ secrets.DOCKER_USERNAME }}/hello-app:${{ github.sha }}'|' deployment.yaml
           git add deployment.yaml
