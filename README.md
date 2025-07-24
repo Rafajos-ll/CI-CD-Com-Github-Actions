@@ -60,6 +60,8 @@ async def root():
 
 - Push para Docker Hub
 
+![Descrição da imagem](Screenshots/Dockerhub-image.png)
+
 - Pull Request automático no repositório de manifestos
 
 - Segredos configurados no GitHub:
@@ -86,9 +88,18 @@ Inclui:
 
 - Sincronização automática ativada
 
+![Descrição da imagem](Screenshots/Argocd.png)
+
 ### ✅ Etapa 5: Acessar e testar a aplicação localmente Port-forward para acessar a aplicação:
 
 ```bash
 kubectl port-forward svc/hello-app 8081:8080
 ```
+- Com tudo funcionando temos o po rodando:
+
+![Descrição da imagem](Screenshots/PodsRodando.png)
+
+- e a aplicacao acessada via port-forward:
+
+![Descrição da imagem](Screenshots/AplicacaoRodando.png)
 
